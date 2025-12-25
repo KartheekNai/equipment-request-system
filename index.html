@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Item Request App</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<div class="page-wrapper">
+
+  <!-- FORM SELECTOR -->
+  <div class="card header-card">
+    <h1>Item Request Portal</h1>
+    <p>Select the Request to continue</p>
+
+    <div class="field">
+      <label>Request Type</label>
+      <select id="form_selector">
+        <option value="">Select</option>
+        <option value="UAV">UAV Tech</option>
+        <option value="ITEM">Replacement Request</option>
+        <option value="DEPLOY">New Deployment</option>
+      </select>
+    </div>
+  </div>
+
+  <!-- UAV TECH -->
+  <div id="uav_form" class="card form-section hidden">
+    <div style="display: flex; align-items: center; margin-bottom: 20px;">
+      <h3>UAV Tech</h3>
+    </div>
+    <div class="form-grid">
+      <div class="field"><label>Request Date</label><input type="date" id="uav_request_date"></div>
+      <div class="field"><label>Request ID</label><input type="text" id="uav_request_id" readonly></div>
+      <div class="field"><label>Requesting Person Name</label><input type="text" id="uav_requesting_person"></div>
+      <div class="field"><label>Item Required</label><input type="text" id="uav_item_required"></div>
+      <div class="field"><label>Quantity</label><input type="number" id="uav_quantity"></div>
+      <div class="field"><label>Return Date</label><input type="date" id="uav_return_date"></div>
+    </div>
+    <div class="form-actions hidden">
+      <button class="back-btn">← Back</button>
+      <button class="submit-btn">Submit</button>
+    </div>
+  </div>
+
+ <!-- ITEM REQUEST -->
+  <div id="item_form" class="card form-section hidden">
+  <div style="display: flex; align-items: center; margin-bottom: 20px;">
+    <h3>Replacement Request</h3>
+  </div>
+
+  <!-- ASSET DETAILS -->
+  <h4>Asset Details</h4>
+  <div class="form-grid">
+    <div class="field">
+      <label>Request Date</label>
+      <input type="date" id="item_request_date">
+    </div>
+
+    <div class="field">
+      <label>Request ID</label>
+      <input type="text" id="item_request_id" readonly>
+    </div>
+
+    <div class="field">
+      <label>Ticket ID</label>
+      <input type="number" id="ticket_id">
+    </div>
+
+    <div class="field">
+      <label>Requesting Person Name</label>
+      <input type="text" id="requester_name">
+    </div>
+
+    <div class="field">
+      <label>Project Name</label>
+      <input type="text" id="project_name">
+    </div>
+
+    <div class="field">
+      <label>Team Name</label>
+      <input type="text" id="team_name">
+    </div>
+  </div>
+
+  <!-- DAMAGE INVENTORY -->
+  <h4>Damage Inventory</h4>
+  <div class="form-grid">
+    <div class="field">
+      <label>Drone Type</label>
+      <input type="text" id="drone_type">
+    </div>
+
+    <div class="field">
+      <label>Drone ID</label>
+      <input type="text" id="drone_id">
+    </div>
+
+    <div class="field">
+      <label>Component Name</label>
+      <input type="text" id="damage_component_name">
+    </div>
+
+    <div class="field">
+      <label>Component Type</label>
+      <input type="text" id="damage_component_type">
+    </div>
+
+    <div class="field">
+      <label>Component ID</label>
+      <input type="text" id="damage_component_id">
+    </div>
+  </div>
+
+  <!-- REPLACEMENT DETAILS -->
+  <h4>Replacement Details</h4>
+  <div class="form-grid">
+    <div class="field">
+      <label>Component Name</label>
+      <input type="text" id="replace_component_name">
+    </div>
+
+    <div class="field">
+      <label>Component Type</label>
+      <input type="text" id="replace_component_type">
+    </div>
+
+    <div class="field">
+      <label>Quantity</label>
+      <input type="number" id="replace_quantity">
+    </div>
+  </div>
+
+  <!-- SHIPPING DETAILS -->
+  <h4>Shipping Details</h4>
+  <div class="form-grid">
+    <div class="field">
+      <label>Receiving Person Name</label>
+      <input type="text" id="ship_person_name">
+    </div>
+
+    <div class="field">
+      <label>Contact Number</label>
+      <input type="tel" id="ship_contact">
+    </div>
+
+    <div class="field">
+      <label>Delivery Location</label>
+      <input type="text" id="ship_location">
+    </div>
+
+    <div class="field">
+      <label>Expected Delivery Date</label>
+      <input type="date" id="ship_expected_date">
+    </div>
+  </div>
+    <div class="form-actions hidden">
+      <button class="back-btn">← Back</button>
+      <button class="submit-btn">Submit</button>
+    </div>
+</div>
+
+  <!-- NEW DEPLOYMENT -->
+  <div id="deploy_form" class="card form-section hidden">
+    <div style="display: flex; align-items: center; margin-bottom: 20px;">
+      <h3>New Deployment</h3>
+    </div>
+
+    <div class="form-grid">
+      <div class="field"><label>Request Date</label><input type="date" id="deploy_request_date"></div>
+      <div class="field"><label>Request ID</label><input type="text" id="deploy_request_id" readonly></div>
+      <div class="field"><label>Requesting Person Name</label><input type="text" id="deploy_requesting_person"></div>
+      <div class="field"><label>Project Name</label><input type="text" id="deploy_project_name"></div>
+      <div class="field"><label>Team Name</label><input type="text" id="deploy_team_name"></div>
+      <div class="field"><label>Drone Type</label><input type="text" id="deploy_drone_type"></div>
+      <div class="field"><label>Camera Type</label><input type="text" id="deploy_camera_type"></div>
+      <div class="field"><label>Lens Type</label><input type="text" id="deploy_lens_type"></div>
+      <div class="field"><label>Quantity</label><input type="number" id="deploy_quantity"></div>
+    </div>
+
+    <h4>Shipping Details</h4>
+    <div class="form-grid">
+      <div class="field"><label>Receiving Person Person Name</label><input type="text" id="deploy_ship_person_name"></div>
+      <div class="field"><label>Contact Number</label><input type="tel" id="deploy_ship_contact"></div>
+      <div class="field"><label>Delivery Location</label><input type="text" id="deploy_ship_location"></div>
+      <div class="field"><label>Expected Date</label><input type="date" id="deploy_ship_expected_date"></div>
+    </div>
+    <div class="form-actions hidden">
+      <button class="back-btn">← Back</button>
+      <button class="submit-btn">Submit</button>
+    </div>
+  </div>
+
+  <!-- SUBMIT (moved into each form) -->
+
+  <!-- SUCCESS MESSAGE -->
+  <div id="success_message" class="card success-card hidden">
+    <div class="success-icon">
+      <svg width="120" height="120" viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="60" cy="60" r="55" fill="white" stroke="#4CAF50" stroke-width="3"/>
+        <path d="M35 60L50 75L85 40" stroke="#4CAF50" stroke-width="5" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+      </svg>
+    </div>
+    <h3>Request Submitted Successfully!</h3>
+    <div class="request-id-display">
+      <label>Request ID:</label>
+      <p id="success_request_id"></p>
+    </div>
+    <button id="new_request_btn" onclick="location.reload()">Create New Request</button>
+  </div>
+
+<script src="https://cdn.jsdelivr.net/npm/papaparse@5.4.1/papaparse.min.js"></script>
+<script src="script.js"></script>
+</body>
+</html>

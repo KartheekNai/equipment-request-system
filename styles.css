@@ -1,0 +1,268 @@
+/* ------------------ RESET ------------------ */
+* {
+  box-sizing: border-box;
+  font-family: "Segoe UI", Tahoma, sans-serif;
+}
+
+/* ------------------ BACKGROUND ------------------ */
+body {
+  margin: 0;
+  min-height: 100vh;
+  padding: 40px 20px;
+
+  background:
+    radial-gradient(circle at top left, #c7d2fe, transparent 40%),
+    radial-gradient(circle at bottom right, #fde68a, transparent 40%),
+    linear-gradient(135deg, #eef2ff, #fdf2f8);
+}
+
+/* ------------------ LAYOUT ------------------ */
+.page-wrapper {
+  max-width: 1100px;
+  margin: auto;
+}
+
+/* ------------------ CARD UI ------------------ */
+.card {
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: 16px;
+  padding: 28px 32px;
+  margin-bottom: 28px;
+  box-shadow:
+    0 20px 40px rgba(0,0,0,0.12),
+    0 5px 15px rgba(0,0,0,0.08);
+  backdrop-filter: blur(6px);
+}
+
+/* ------------------ HEADER ------------------ */
+.header-card h1 {
+  margin-bottom: 6px;
+  font-size: 28px;
+  color: #01090c;
+  text-align: center;
+}
+
+.header-card p {
+  color: #01070f;
+  text-align: center;
+}
+
+/* ------------------ FIELD ------------------ */
+.field {
+  display: flex;
+  flex-direction: column;
+}
+
+/* LABEL */
+.field label {
+  font-size: 13px;
+  font-weight: 600;
+  margin-bottom: 6px;
+
+  background: linear-gradient(90deg, #080806, #d67a23);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+
+  /* ✅ CENTER LABELS */
+  text-align: center;
+}
+
+/* INPUTS & SELECTS */
+.field input,
+.field select {
+  padding: 12px 14px;
+  border-radius: 12px;
+  border: 1px solid #8484a0;
+  font-size: 14px;
+  background-color: #ffffff;
+  transition: all 0.2s ease;
+
+  /* ✅ CENTER + BOLD INPUT CONTENT */
+  text-align: center;
+  font-weight: 600;
+}
+
+/* FOCUS EFFECT */
+.field input:focus,
+.field select:focus {
+  outline: none;
+  border-color: #04050c;
+  box-shadow: 0 0 0 3px rgba(14, 15, 15, 0.25);
+}
+
+/* ------------------ HEADINGS ------------------ */
+h3 {
+  margin: 30px 0 14px;
+  color: #9b860d;
+  text-align: center;
+}
+
+h4 {
+  margin: 22px 0 10px;
+  color: #222ed6;
+  font-weight: 600;
+  text-align: center;
+}
+
+/* ------------------ GRID ------------------ */
+.form-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  gap: 18px;
+}
+
+/* ------------------ VISIBILITY ------------------ */
+.hidden {
+  display: none;
+}
+
+/* ------------------ SUBMIT BAR ------------------ */
+.submit-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* SUBMIT BUTTON */
+#submit_btn {
+  background: linear-gradient(135deg, #6366f1, #a855f7);
+  color: #ffffff;
+  padding: 14px 36px;
+  border: none;
+  border-radius: 14px;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow:
+    0 12px 30px rgba(99,102,241,0.4);
+  transition: all 0.25s ease;
+}
+
+#submit_btn:hover {
+  transform: translateY(-2px);
+  box-shadow:
+    0 18px 40px rgba(168,85,247,0.5);
+}
+
+/* ------------------ RESPONSIVE ------------------ */
+@media (max-width: 768px) {
+  body {
+    padding: 20px 10px;
+  }
+
+  .card {
+    padding: 22px;
+  }
+
+  .header-card h1 {
+    font-size: 24px;
+  }
+}
+
+/* ============ BACK BUTTON ============ */
+.back-btn {
+  background-color: #6c757d;
+  color: white;
+  border: none;
+  padding: 10px 16px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 600;
+  transition: background-color 0.3s ease;
+}
+
+.back-btn:hover {
+  background-color: #5a6268;
+}
+
+/* ============ FORM ACTIONS ============ */
+.form-actions {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 18px;
+}
+
+.submit-btn {
+  background: linear-gradient(135deg, #6366f1, #a855f7);
+  color: #ffffff;
+  padding: 12px 28px;
+  border: none;
+  border-radius: 12px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: 0 10px 24px rgba(99,102,241,0.3);
+}
+
+.submit-btn:hover { transform: translateY(-2px); }
+
+/* ============ SUCCESS MESSAGE ============ */
+.success-card {
+  text-align: center;
+  border-top: 4px solid #4CAF50;
+}
+
+.success-icon {
+  margin: 20px 0;
+  display: flex;
+  justify-content: center;
+  animation: scaleIn 0.5s ease-out;
+}
+
+@keyframes scaleIn {
+  from {
+    transform: scale(0);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+.success-card h3 {
+  color: #4CAF50;
+  font-size: 24px;
+  margin: 15px 0;
+}
+
+.request-id-display {
+  background-color: #f5f5f5;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 20px;
+  margin: 20px 0;
+}
+
+.request-id-display label {
+  display: block;
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 8px;
+}
+
+.request-id-display p {
+  font-size: 18px;
+  font-weight: bold;
+  color: #4CAF50;
+  word-break: break-all;
+  margin: 0;
+}
+
+#new_request_btn {
+  background-color: #4CAF50;
+  color: white;
+  padding: 12px 30px;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  margin-top: 15px;
+}
+
+#new_request_btn:hover {
+  background-color: #45a049;
+}
